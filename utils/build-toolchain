@@ -146,6 +146,22 @@ DISTCC_FLAG="${DISTCC_FLAG}"
 PRESET_FILE_FLAGS="${PRESET_FILE_FLAGS}"
 SCCACHE_FLAG="${SCCACHE_FLAG}"
 
+echo ./utils/build-script ${DRY_RUN} ${DISTCC_FLAG} ${PRESET_FILE_FLAGS} \
+        ${SCCACHE_FLAG} \
+        --preset="${PRESET_PREFIX}${SWIFT_PACKAGE}${PRESET_SUFFIX}" \
+        install_destdir="${SWIFT_INSTALL_DIR}" \
+        installable_package="${SWIFT_INSTALLABLE_PACKAGE}" \
+        install_toolchain_dir="${SWIFT_TOOLCHAIN_DIR}" \
+        install_symroot="${SWIFT_INSTALL_SYMROOT}" \
+        symbols_package="${SYMBOLS_PACKAGE}" \
+        darwin_toolchain_bundle_identifier="${BUNDLE_IDENTIFIER}" \
+        darwin_toolchain_display_name="${DISPLAY_NAME}" \
+        darwin_toolchain_display_name_short="${DISPLAY_NAME_SHORT}" \
+        darwin_toolchain_xctoolchain_name="${TOOLCHAIN_NAME}" \
+        darwin_toolchain_version="${TOOLCHAIN_VERSION}" \
+        darwin_toolchain_alias="Local" \
+        darwin_toolchain_require_use_os_runtime="${REQUIRE_USE_OS_RUNTIME}"
+
 ./utils/build-script ${DRY_RUN} ${DISTCC_FLAG} ${PRESET_FILE_FLAGS} \
         ${SCCACHE_FLAG} \
         --preset="${PRESET_PREFIX}${SWIFT_PACKAGE}${PRESET_SUFFIX}" \
